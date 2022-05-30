@@ -1,0 +1,61 @@
+{
+  "name": "@vue-storefront/nuxt-mermaid",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "author": "Heitor Ramon Ribeiro <heitor.ramon@gmail.com> (https://heitor.cc/)",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "dedent": "^0.7.0",
+    "@nuxt/kit": "^3.0.0-rc.3",
+    "defu": "^6.0.0",
+    "mermaid": "^9.1.1",
+    "nanoid": "^3.3.4"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.0.0",
+    "@nuxt/module-builder": "latest",
+    "@types/mermaid": "^8.2.9",
+    "@vue-storefront/eslint-config-nuxt": "^1.0.3",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "latest",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "nuxt": "^3.0.0-rc.3",
+    "prettier": "^2.6.2"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

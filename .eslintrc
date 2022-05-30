@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": [
+    "@vue-storefront/eslint-config-nuxt"
+  ],
+  "parserOptions": {
+    "project": [
+      "tsconfig.json",
+      "playground/tsconfig.json"
+    ]
+  },
+  "rules": {
+
+  }
+}
